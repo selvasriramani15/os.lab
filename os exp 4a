@@ -1,0 +1,39 @@
+#include&lt;stdio.h&gt;
+void main(int argc,char*argv[])
+{
+int
+i,j=0,n,burst[10],wait[10],turn[1
+0];
+float w=0,t=0;
+printf(&quot;Enter the no. of processes&quot;);
+scanf(&quot;%d&quot;,&amp;n);
+burst[0]=0;
+printf(&quot;Enter the burst time&quot;);
+for(i=1;i&lt;=n;i++)
+{
+scanf(&quot;%d&quot;,&amp;burst[i]);
+}
+printf(&quot;\n\nGantt chart\n&quot;);
+printf(&quot;\n \n&quot;);
+for(i=1;i&lt;=n;i++)
+printf(&quot;\tP%d\t|&quot;,i);
+printf(&quot;\n \n&quot;);
+for(i=0;i&lt;=n;i++)
+{ j=j+burst[i];
+wait[i+1]=j;
+turn[i]=j;
+printf(&quot;%d\t\t&quot;,j);
+}
+for(i=1;i&lt;=n;i++)
+w=w+wait[i];
+for(i=0;i&lt;=n;i++)
+t=t+turn[i];
+w=w/n;
+t=t/n;
+
+13
+
+printf(&quot;\nAverage waiting time %0.2f&quot;,w);
+printf(&quot;\nAverage turnaroundtime %0.2f&quot;,t);
+}
+31
